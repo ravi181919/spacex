@@ -70,13 +70,13 @@ const Home = () => {
               initial={{ y: 40 }}
               whileInView={{ y: 0 }}
               transition={{ duration: 0.4, ease: "linear" }}
-              className="w-[35%] h-fit absolute bottom-8 left-[8%] p-4"
+              className="w-[100%] lg:w-[35%] h-fit absolute bottom-8 left-[1%] lg:left-[8%] p-2 "
             >
               <motion.span
                 initial={{ y: 60, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "linear" }}
-                className="text-md font-light"
+                className="text-xl  lg:text-md font-normal lg:font-light"
               >
                 {item.recent ? "Recent Launch" : ""}
               </motion.span>
@@ -84,7 +84,7 @@ const Home = () => {
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4, ease: "linear" }}
-                className="font-bold uppercase leading-none text-[3vw]"
+                className="font-bold  uppercase leading-none text-[8.5vw] tracking-tight lg:text-[3vw]"
               >
                 {item.missionName}
               </motion.h1>

@@ -1,0 +1,34 @@
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+
+html{
+  scroll-behavior: smooth;
+}
+
+.LinkAnimation {
+  position: relative;
+}
+.LinkAnimation::after {
+  content: ' ';
+  height: 2px;
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  width: 0; 
+  background: #fff;
+  transition: width 0.3s ease; 
+}
+
+.LinkAnimation:hover::after {
+  width: 100%; 
+}
+
+::-webkit-scrollbar{
+  width: 4px;
+  background: #000;
+}
+::-webkit-scrollbar-thumb{
+  background: #fff;
+
+}

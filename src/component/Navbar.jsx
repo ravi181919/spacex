@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import {NavLink} from 'react-router-dom';
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  console.log(menu);
 
   return (
     <div className="h-[18vh] w-full relative text-white overflow-hidden">
@@ -23,22 +23,22 @@ const Navbar = () => {
         {/* Links */}
         <div className="Links lg:flex lg:justify-center lg:items-center hidden gap-4 ">
           {[
-            "Falcon 9",
-            "Falcon Heavy",
-            "Dragon",
-            "Starship",
-            "Human Spaceflight",
-            "Rideshare",
-            "Starshield",
-            "Starlink",
+            "falcon 9",
+            "falcon Heavy",
+            "dragon",
+            "starship",
+            "human Spaceflight",
+            "rideshare",
+            "starshield",
+            "starlink",
           ].map((linksName, linksIndex) => (
-            <a
-              href="#"
+            <NavLink
+              to={`/${linksName.toLocaleLowerCase().replace(/ /g, '-')}`}
               key={linksIndex}
               className="LinkAnimation uppercase font-medium text-xs"
             >
               {linksName}
-            </a>
+            </NavLink>
           ))}
         </div>
 

@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -10,25 +10,30 @@ html{
   position: relative;
 }
 .LinkAnimation::after {
-  content: ' ';
+  content: " ";
   height: 2px;
   position: absolute;
-  bottom: -3px; 
+  bottom: -3px;
   left: 0;
-  width: 0; 
+  width: 0;
   background: #fff;
-  transition: width 0.3s ease; 
+  transition: width 0.3s ease;
 }
 
 .LinkAnimation:hover::after {
-  width: 100%; 
+  width: 100%;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 4px;
   background: #000;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #fff;
+}
 
+/* overview */
+
+.on-scrollbar::-webkit-scrollbar {
+  display: none;
 }

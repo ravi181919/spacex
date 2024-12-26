@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Navbar";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const mission = [
@@ -36,28 +36,9 @@ const Home = () => {
     },
   ];
 
-  const [navHidden, setNavHidden] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latestValue) => {
-    const previousValue = scrollY.getPrevious();
-    if (latestValue > previousValue && latestValue > 20) setNavHidden(true);
-    else setNavHidden(false);
-  });
-
   return (
     <div className="w-full text-white">
-      <motion.div
-        variants={{
-          visible: { opacity: 1 },
-          hidden: { opacity: 0 },
-        }}
-        animate={navHidden ? "hidden" : "visible"}
-        className="h-[10vh] w-full fixed z-10 top-0 left-0"
-      >
         <Navbar />
-      </motion.div>
-
       <div className="relative">
         {mission.map((item, index) => (
           <div className="relative w-full h-screen" key={index}>
